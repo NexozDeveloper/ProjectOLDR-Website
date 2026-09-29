@@ -1,1 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ProjectOLDR – Download for Windows</title>
+<meta name="description" content="Project Oldr, the ultimate launcher for Secret Neighbor. Download the Windows installer and start playing in minutes.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="ProjectOLDR – Download for Windows">
+<meta property="og:description" content="Project Oldr, the ultimate launcher for Secret Neighbor. One small installer for Windows.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" defer></script>
+
+<style>
+:root{
+  --black:#000;
+  --ink1:#0c0c0c;
+  --ink2:#151515;
+  --line:#262626;
+  --text:#ededed;
+  --muted:#9a9f9b;
+  --green:#009600;          
+  --green-hi:#3ddc6b;
+  --green-deep:#0d2a12;
+  --cta:#e6edf9;            
+  --cta-ink:#151922;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Instrument Sans","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{background:var(--black);color:var(--text);font-family:var(--body);-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--green-hi);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.025em;line-height:1.08}
+i[data-lucide]{display:inline-block;width:1.25em;height:1.25em}
+svg.lucide{width:1.25em;height:1.25em;stroke-width:1.75;flex:none}
+svg.fl{width:1.25em;height:1.25em;flex:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+section{scroll-margin-top:72px}
+
+.nav{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:1.2rem;letter-spacing:-.02em;text-decoration:none}
+.nav-links{display:flex;gap:30px;color:var(--muted);font-size:.95rem}
+.nav-links a{text-decoration:none;transition:color .15s}
+.nav-links a:hover{color:var(--text)}
+.btn-sm{display:inline-flex;align-items:center;gap:8px;background:var(--cta);color:var(--cta-ink);padding:9px 16px;border-radius:10px;font-weight:600;font-size:.92rem;text-decoration:none;transition:background .15s}
+.btn-sm:hover{background:#f3f6fd}
+
+.dl{display:inline-flex;align-items:center;gap:14px;background:var(--cta);color:var(--cta-ink);padding:18px 30px;border-radius:14px;font:600 1.1rem/1 var(--body);text-decoration:none;transition:transform .15s,background .15s}
+.dl:hover{background:#f3f6fd;transform:translateY(-2px)}
+.dl:active{transform:translateY(0)}
+.dl svg{width:26px;height:26px;flex:none}
+
+.hero{padding:88px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:1.02fr 1fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(2.7rem,5.6vw,4.7rem);letter-spacing:-.035em;line-height:1;max-width:11ch}
+.hero p.lead{margin-top:24px;font-size:1.2rem;color:#c6cbc7;max-width:34ch}
+.hero .actions{margin-top:36px}
+.chips{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px;color:var(--muted);font-size:.95rem}
+.chips span{display:inline-flex;align-items:center;gap:8px}
+.chips i,.chips svg{color:var(--green-hi)}
+
+.stage{position:relative;justify-self:center;width:100%;max-width:400px}
+.stage::before{content:"";position:absolute;inset:8% 2% -8% 2%;background:radial-gradient(closest-side,rgba(0,150,0,.34),transparent 72%);filter:blur(26px)}
+.stage img{position:relative;z-index:1;display:block;width:100%;height:auto;border:1px solid #2b2b2b;border-radius:10px;box-shadow:0 40px 90px -30px rgba(0,150,0,.45)}
+
+.block{padding:96px 0;border-top:1px solid var(--line)}
+.block h2{font-size:clamp(2rem,3.6vw,3rem);max-width:16ch}
+.block .sub{margin-top:16px;color:var(--muted);max-width:44ch}
+
+.features{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.feat{padding:32px 32px 36px 0;border-bottom:1px solid var(--line)}
+.feat:not(:nth-child(3n+1)){padding-left:32px;border-left:1px solid var(--line)}
+.ico{display:grid;place-items:center;width:46px;height:46px;border:1px solid #1f5a27;border-radius:10px;background:var(--green-deep);color:var(--green-hi);margin-bottom:22px}
+.ico svg{width:22px;height:22px}
+.feat h3{font-size:1.25rem;margin-bottom:8px}
+.feat p{color:var(--muted);max-width:32ch}
+
+.steps{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s;list-style:none;padding:0}
+.steps li{position:relative;padding:28px;background:var(--ink1);border:1px solid var(--line);border-radius:12px}
+.steps .n{font-family:var(--display);font-weight:800;font-size:.95rem;color:var(--green-hi);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.steps .n::after{content:"";flex:1;height:1px;background:var(--line)}
+.steps h3{font-size:1.3rem;display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.steps h3 svg{color:var(--green-hi)}
+.steps p{color:var(--muted)}
+.file{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:7px 12px;border:1px dashed #33513a;border-radius:6px;font-size:.85rem;color:#c6cbc7}
+
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.specs{list-style:none;padding:0;border-top:1px solid var(--line)}
+.specs li{display:grid;grid-template-columns:34px 130px 1fr;align-items:center;gap:8px;padding:20px 0;border-bottom:1px solid var(--line)}
+.specs .k{color:var(--muted);font-size:.95rem}
+.specs .v{font-weight:500}
+.specs .i{color:var(--green-hi);font-size:1.15rem;display:grid;place-items:center;justify-content:start}
+
+.faq{margin-top:48px;max-width:760px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;cursor:pointer;list-style:none;font-family:var(--display);font-weight:600;font-size:1.15rem;letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{color:var(--green-hi);transition:transform .2s}
+.faq details[open] summary svg{transform:rotate(180deg)}
+.faq details p{padding:0 0 24px;color:var(--muted);max-width:60ch}
+.faq details b{color:var(--text);font-weight:600}
+
+.final{padding:96px 0 104px;border-top:1px solid var(--line);text-align:center}
+.final h2{font-size:clamp(2rem,4vw,3.2rem);margin:0 auto;max-width:18ch}
+.final p{color:var(--muted);margin:16px auto 34px;max-width:40ch}
+
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.social{display:flex;gap:18px;font-size:1.25rem}
+.social a{color:var(--muted);transition:color .15s}
+.social a:hover{color:var(--green-hi)}
+
+.toast{position:fixed;left:50%;bottom:28px;z-index:50;width:min(520px,calc(100% - 32px));display:flex;gap:14px;align-items:flex-start;padding:16px 18px;background:#0f1a11;border:1px solid #1f5a27;border-radius:12px;font-size:.95rem;line-height:1.45;transform:translate(-50%,24px);opacity:0;pointer-events:none;transition:transform .3s,opacity .3s}
+.toast.show{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+.toast svg{color:var(--green-hi);margin-top:2px}
+.toast b{font-weight:600}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
+
+@media (max-width:960px){
+  .hero{padding:56px 0 72px}
+  .hero .wrap{grid-template-columns:1fr;gap:56px}
+  .hero h1{max-width:14ch}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .feat,.feat:not(:nth-child(3n+1)){padding:28px 24px 32px 0;border-left:0}
+  .feat:nth-child(2n){padding-left:24px;border-left:1px solid var(--line)}
+  .steps{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr;gap:36px}
+}
+@media (max-width:640px){
+  .nav-links{display:none}
+  .block,.final{padding:72px 0}
+  .features{grid-template-columns:1fr}
+  .feat,.feat:nth-child(2n),.feat:not(:nth-child(3n+1)){padding:26px 0 30px;border-left:0}
+  .specs li{grid-template-columns:34px 1fr}
+  .specs .v{grid-column:2}
+  footer .wrap{justify-content:center;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="ProjectOLDR home">
+      <svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#000" stroke="#262626" stroke-width="2"/><circle cx="32" cy="32" r="15" fill="none" stroke="#009600" stroke-width="8"/></svg>
+      ProjectOLDR
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#requirements">Requirements</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn-sm dl-link" href="ProjectOLDR.msi" download>
+      <i data-lucide="download"></i> Download
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>One launcher for all your Secret Neighbor Old Version Games.</h1>
+        <p class="lead">Project OLDR Is The Ultimate Launcher For Old Version Of Secret Neighbor.</p>
+
+        <div class="actions">
+          <a class="dl dl-link" href="ProjectOLDR.msi" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 2h9.5v9.5H2zM12.5 2H22v9.5h-9.5zM2 12.5h9.5V22H2zM12.5 12.5H22V22h-9.5z"/></svg>
+            Download for Windows
+          </a>
+        </div>
+
+        <div class="chips">
+          <span><i data-lucide="hard-drive-download"></i> 3238&nbsp;KB installer (.msi)</span>
+          <span><i class="fa-brands fa-windows"></i> Windows 10 &amp; 11</span>
+        </div>
+      </div>
+
+      <div class="stage">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX4AAAGFCAYAAAD6j5gmAAAWfmNhQlgAABZ+anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAFlhqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOjhmNGQzNjE5LTQzOTctNGRlZC04NGFjLTQ4YThmMDAzZDVmNwAAAAOTanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAuGp1bWIAAABEanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5pbmdyZWRpZW50LnYzAAAAABhjMnNorSax8JChtjeF2Hm6/VY9IQAAAGxjYm9yo2lkYzpmb3JtYXRpaW1hZ2UvcG5namluc3RhbmNlSUR4LHhtcDppaWQ6YjEzNjY1NWMtMjczZi00MWQyLWI2MWItMzIwOGM3YzdlMmQ1bHJlbGF0aW9uc2hpcGhwYXJlbnRPZgAAAeJqdW1iAAAAQWp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuYWN0aW9ucy52MgAAAAAYYzJzaP7hTiLkfLnSGsIngeXqBskAAAGZY2JvcqJnYWN0aW9uc4KiZmFjdGlvbmtjMnBhLm9wZW5lZGpwYXJhbWV0ZXJzoWtpbmdyZWRpZW50c4GiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5pbmdyZWRpZW50LnYzZGhhc2hYIHkI/wCRyxwckv6Sh/vlAwqIOXK9SQXBkRxhAEk6Sv6ypGZhY3Rpb254HWNvbS5hbnRocm9waWMuY2xhdWRlLnByb3ZpZGVkanBhcmFtZXRlcnOheB9jb20uYW50aHJvcGljLm9yaWdpbi1jb25maWRlbmNlZ3Vua25vd25rZGVzY3JpcHRpb254ZkNsYXVkZSBwcm92aWRlZCB0aGlzIGZpbGUgYXQgdGhlIHJlcXVlc3Qgb2YgYSB1c2VyIGFuZCBtYXkgaGF2ZSBjcmVhdGVkIG9yIG1vZGlmaWVkIHRoZSBmaWxlIGNvbnRlbnRzLm1zb2Z0d2FyZUFnZW50oWRuYW1lZkNsYXVkZXJhbGxBY3Rpb25zSW5jbHVkZWT1AAAAyGp1bWIAAABAanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5oYXNoLmRhdGEAAAAAGGMyc2jfZ1wODfD1rKJXRn7+EiMcAAAAgGNib3KlY2FsZ2ZzaGEyNTZjcGFkTQAAAAAAAAAAAAAAAABkaGFzaFggYHa37wFeaYCwnt7XwVtvdfnFVWLV1XenEE773SuQMr1kbmFtZW5qdW1iZiBtYW5pZmVzdGpleGNsdXNpb25zgaJlc3RhcnQYIWZsZW5ndGgZFooAAAI+anVtYgAAACdqdW1kYzJjbAARABCAAACqADibcQNjMnBhLmNsYWltLnYyAAAAAg9jYm9ypWNhbGdmc2hhMjU2aXNpZ25hdHVyZXhNc2VsZiNqdW1iZj0vYzJwYS91cm46YzJwYTo4ZjRkMzYxOS00Mzk3LTRkZWQtODRhYy00OGE4ZjAwM2Q1ZjcvYzJwYS5zaWduYXR1cmVqaW5zdGFuY2VJRHgseG1wOmlpZDozM2U2ODFhYS1mYzNiLTRhOWItYmE0ZC1jODk5YjlhNWI0NDByY3JlYXRlZF9hc3NlcnRpb25zg6JjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggeQj/AJHLHByS/pKH++UDCog5cr1JBcGRHGEASTpK/rKiY3VybHgqc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5hY3Rpb25zLnYyZGhhc2hYIBWQD52NnqqOoYK5BOX88/dnRO7+cE8P+PlUV1Tpo+9ComN1cmx4KXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaGFzaC5kYXRhZGhhc2hYIIp2rfGNQbJE/pE21gI2Kj+/v8w9twRVwdyti6yEim2UdGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lb0FudGhyb3BpYyBGaWxlc2d2ZXJzaW9uZTEuMC4wa3NwZWNWZXJzaW9uZTIuNC4wAAAQOGp1bWIAAAAoanVtZGMyY3MAEQAQgAAAqgA4m3EDYzJwYS5zaWduYXR1cmUAAAAQCGNib3LShFkCEqIBJhghWQIKMIICBjCCAY2gAwIBAgIUQOWgCu7COdC+uIP6BkIFPWdVEwAwCgYIKoZIzj0EAwMwSTEXMBUGA1UEChMOQW50aHJvcGljLCBQQkMxLjAsBgNVBAMTJUFudGhyb3BpYyBDb250ZW50IENyZWRlbnRpYWxzIFJvb3QgQ0EwHhcNMjYwODA3MTg0MzU2WhcNMjgwODA2MTk0MzU2WjBEMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEpMCcGA1UEAxMgQW50aHJvcGljIENsYXVkZSBDb250ZW50IFNpZ25pbmcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASYegpry1AYBRTVNL1CpTlbROnY3dey+UrsF9C3phYrATN3ZHf93Mo8RQN0KOUuOn19P4oWNFWe5n2/She9N7eTo1gwVjAOBgNVHQ8BAf8EBAMCB4AwFQYDVR0lBA4wDAYKKwYBBAGD6F4CATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFM5R4gSBTmRbI/jjxM+aPpzB11zCMAoGCCqGSM49BAMDA2cAMGQCMDFzHRSeAXrSy1WOzkbhPZ6Km2wGTmZ/2gK18k8BQGXyqz88Rdrz6CTX9flAnYNVxgIwcF9c3fVhqmJKpi+UhasNUMko69cyX6STPfta3Q8EjyzDjzoyrol46FP6VFHhvUcJoWNwYWRZDZ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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" width="382" height="389" fetchpriority="high" alt="The ProjectOLDR launcher login window with username and password fields and Log in and Sign up buttons.">
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="features">
+    <div class="wrap">
+      <h2>Built to stay out of your way.</h2>
+      <p class="sub">Small install, clean window, no clutter between you and your games.</p>
+
+      <div class="features">
+        <article class="feat">
+          <div class="ico"><svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M7.425 2.83A1.25 1.25 0 0 1 8.603 2h6.453a1.25 1.25 0 0 1 1.186 1.645L14.79 8h3.96c1.103 0 1.665 1.327.897 2.12L8.586 21.536c-1.054 1.088-2.872.106-2.541-1.372l1.27-5.668l-1.57-.006a1.75 1.75 0 0 1-1.641-2.337zm1.354.67l-3.262 9.157a.25.25 0 0 0 .234.333l2.502.01a.75.75 0 0 1 .729.914l-1.473 6.578L18.159 9.5h-4.41a.75.75 0 0 1-.71-.987l1.67-5.013z"/></svg></div>
+          <h3>Small and quick</h3>
+          <p>The installer is under 1&nbsp;MB and sets up in seconds.</p>
+        </article>
+        <article class="feat">
+          <div class="ico"><svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M9.808 5.508a2.58 2.58 0 0 0-1.638-.206l-1.183.226a2.85 2.85 0 0 0-2.004 1.5c-1.367 2.672-2.4 4.862-2.799 6.729c-.411 1.926-.16 3.575 1.08 5.076c.82.996 2.229.794 2.963-.036c.558-.632 1.195-1.364 1.817-2.086a2.15 2.15 0 0 1 1.63-.749h4.655c.625 0 1.22.274 1.63.749c.622.722 1.259 1.454 1.817 2.086c.734.83 2.142 1.032 2.964.036c1.239-1.501 1.49-3.15 1.08-5.076c-.4-1.867-1.433-4.057-2.8-6.73a2.85 2.85 0 0 0-2.004-1.5l-1.183-.225a2.58 2.58 0 0 0-1.638.206q-.216.107-.44.23a2.34 2.34 0 0 1-1.113.296h-1.281c-.377 0-.758-.104-1.113-.297q-.224-.121-.44-.23m-1.37 1.197c.274-.052.528-.021.732.08q.191.097.397.208c.54.292 1.153.47 1.794.47h1.281a3.8 3.8 0 0 0 1.794-.47q.206-.111.398-.208c.203-.101.457-.132.732-.08l1.183.226c.43.082.8.359 1 .747c1.38 2.699 2.32 4.724 2.673 6.377c.34 1.595.121 2.773-.784 3.869a.4.4 0 0 1-.348.149a.64.64 0 0 1-.443-.222a237 237 0 0 1-1.806-2.073a3.58 3.58 0 0 0-2.712-1.244H9.674a3.58 3.58 0 0 0-2.712 1.244c-.62.72-1.252 1.447-1.806 2.073a.64.64 0 0 1-.443.222a.4.4 0 0 1-.348-.15c-.905-1.095-1.125-2.273-.784-3.868c.353-1.653 1.294-3.678 2.674-6.377a1.42 1.42 0 0 1 1-.747zM12 11a1 1 0 1 0 0-2a1 1 0 0 0 0 2"/></svg></div>
+          <h3>Launch in a click</h3>
+          <p>Pick a Secret Neighbor game version from your library and start it straight away.</p>
+        </article>
+        <article class="feat">
+          <div class="ico"><svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M20.026 17.001c-2.762 4.784-8.879 6.423-13.663 3.661A10 10 0 0 1 3.13 17.68a.75.75 0 0 1 .365-1.132c3.767-1.348 5.785-2.91 6.956-5.146c1.233-2.353 1.551-4.93.689-8.463a.75.75 0 0 1 .769-.927a9.96 9.96 0 0 1 4.457 1.327c4.784 2.762 6.423 8.879 3.66 13.662m-8.247-4.903c-1.252 2.389-3.312 4.1-6.818 5.499a8.5 8.5 0 0 0 2.152 1.766a8.502 8.502 0 0 0 8.502-14.725a8.5 8.5 0 0 0-2.792-1.015c.647 3.384.23 6.043-1.045 8.475"/></svg></div>
+          <h3>Easy on the eyes</h3>
+          <p>A dark interface with green accents that suits any desktop.</p>
+        </article>
+        <article class="feat">
+          <div class="ico"><svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M3 5.75A.75.75 0 0 1 3.75 5c2.663 0 5.258-.943 7.8-2.85a.75.75 0 0 1 .9 0C14.992 4.057 17.587 5 20.25 5a.75.75 0 0 1 .75.75V11q0 .507-.04.996a6.5 6.5 0 0 0-1.465-.684q.005-.155.005-.312V6.478c-2.577-.152-5.08-1.09-7.5-2.8c-2.42 1.71-4.923 2.648-7.5 2.8V11c0 4.149 2.332 7.221 7.125 9.285a6.5 6.5 0 0 0 1.005 1.52l-.355.143a.75.75 0 0 1-.55 0C5.958 19.676 3 16 3 11zM23 17.5a5.5 5.5 0 1 1-11 0a5.5 5.5 0 0 1 11 0m-2.146-2.354a.5.5 0 0 0-.708 0L16.5 18.793l-1.646-1.647a.5.5 0 0 0-.708.708l2 2a.5.5 0 0 0 .708 0l4-4a.5.5 0 0 0 0-.708"/></svg></div>
+          <h3>Admin tools built in</h3>
+          <p>Manage the launcher from a dedicated admin screen.</p>
+        </article>
+        <article class="feat">
+          <div class="ico"><svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M6.75 22a.75.75 0 0 1-.102-1.493l.102-.007h1.749v-2.498H4.25a2.25 2.25 0 0 1-2.245-2.096L2 15.752V5.25a2.25 2.25 0 0 1 2.096-2.245L4.25 3h15.499a2.25 2.25 0 0 1 2.245 2.096l.005.154v10.502a2.25 2.25 0 0 1-2.096 2.245l-.154.005h-4.25V20.5h1.751a.75.75 0 0 1 .102 1.494L17.25 22zm7.248-3.998h-4l.001 2.498h4zM19.748 4.5H4.25a.75.75 0 0 0-.743.648L3.5 5.25v10.502c0 .38.282.694.648.743l.102.007h15.499a.75.75 0 0 0 .743-.648l.007-.102V5.25a.75.75 0 0 0-.648-.743z"/></svg></div>
+          <h3>Native Windows app</h3>
+          <p>Built with C# for Windows. It runs like any desktop app, no browser needed.</p>
+        </article>
+        <article class="feat">
+          <div class="ico"><svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M10.591 2.513a3.75 3.75 0 0 1 2.818 0l7.498 3.04A1.75 1.75 0 0 1 22 7.175v9.653a1.75 1.75 0 0 1-1.093 1.621l-7.498 3.04a3.75 3.75 0 0 1-2.818 0l-7.498-3.04A1.75 1.75 0 0 1 2 16.827V7.176a1.75 1.75 0 0 1 1.093-1.622zm2.254 1.39a2.25 2.25 0 0 0-1.69 0L9.24 4.68l7.527 2.927l2.669-1.03zm1.846 4.505L7.215 5.5L4.59 6.564l7.411 2.882zM3.5 16.828a.25.25 0 0 0 .156.231l7.499 3.04q.047.02.095.036v-9.371L3.5 7.75zm9.345 3.271l7.499-3.04a.25.25 0 0 0 .156-.232V7.774l-7.75 2.992v9.37z"/></svg></div>
+          <h3>One-file installer</h3>
+          <p>Run a single .msi and follow the wizard. Uninstall any time from Windows Settings.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="how">
+    <div class="wrap">
+      <h2>Up and running in three steps.</h2>
+      <p class="sub">From download to your first game takes about a minute.</p>
+
+      <ol class="steps">
+        <li>
+          <div class="n">1</div>
+          <h3><svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M18.25 20.5a.75.75 0 1 1 0 1.5l-13 .005a.75.75 0 1 1 0-1.5zM11.648 2.014l.102-.007a.75.75 0 0 1 .743.648l.007.102l-.001 13.685l3.722-3.72a.75.75 0 0 1 .976-.073l.085.073a.75.75 0 0 1 .072.976l-.073.084l-4.997 4.997a.75.75 0 0 1-.976.073l-.085-.073l-5.003-4.996a.75.75 0 0 1 .976-1.134l.084.072l3.719 3.714L11 2.756a.75.75 0 0 1 .648-.743l.102-.007z"/></svg> Download</h3>
+          <p>Click <b>Download for Windows</b> to get the installer.</p>
+          <span class="file"><svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9.828a2 2 0 0 0-.586-1.414l-5.828-5.828A2 2 0 0 0 12.172 2zm-.5 2a.5.5 0 0 1 .5-.5h6V8a2 2 0 0 0 2 2h4.5v10a.5.5 0 0 1-.5.5H6a.5.5 0 0 1-.5-.5zm11.88 4.5H14a.5.5 0 0 1-.5-.5V4.62z"/></svg> ProjectOLDR.msi</span>
+        </li>
+        <li>
+          <div class="n">2</div>
+          <h3><svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M9.25 2a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0v-2.5A.75.75 0 0 1 9.25 2M4.47 3.97a.75.75 0 0 1 1.06 0l1.75 1.75a.75.75 0 1 1-1.06 1.06L4.47 5.03a.75.75 0 0 1 0-1.06m9.56 0a.75.75 0 0 1 0 1.06l-1.75 1.75a.75.75 0 1 1-1.06-1.06l1.75-1.75a.75.75 0 0 1 1.06 0M2.5 8.75A.75.75 0 0 1 3.25 8h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75m8.177-.264C9.822 7.752 8.5 8.36 8.5 9.487v11.274c0 1.21 1.495 1.782 2.302.88l2.614-2.923c.276-.308.664-.49 1.077-.507l3.84-.154c1.197-.048 1.715-1.539.805-2.32zM10 20.287V9.881l7.812 6.696l-3.38.135a3.03 3.03 0 0 0-2.133 1.006z"/></svg> Install</h3>
+          <p>Open the file and follow the installer. It only takes a few clicks.</p>
+        </li>
+        <li>
+          <div class="n">3</div>
+          <h3><svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M7.608 4.615a.75.75 0 0 0-1.108.659v13.452a.75.75 0 0 0 1.108.659l12.362-6.726a.75.75 0 0 0 0-1.318zM5 5.274c0-1.707 1.826-2.792 3.325-1.977l12.362 6.727c1.566.852 1.566 3.1 0 3.952L8.325 20.702C6.826 21.518 5 20.432 5 18.726z"/></svg> Play</h3>
+          <p>Open ProjectOLDR, Sign In or Log In and hit Play button..</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="requirements">
+    <div class="wrap split">
+      <div>
+        <h2>What you need.</h2>
+        <p class="sub">Nothing exotic. If you can run Windows, you can run ProjectOLDR.</p>
+      </div>
+      <ul class="specs">
+        <li><span class="i"><i class="fa-brands fa-windows"></i></span><span class="k">System</span><span class="v">Windows 10 or Windows 11</span></li>
+        <li><span class="i"><svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M10.591 2.513a3.75 3.75 0 0 1 2.818 0l7.498 3.04A1.75 1.75 0 0 1 22 7.175v9.653a1.75 1.75 0 0 1-1.093 1.621l-7.498 3.04a3.75 3.75 0 0 1-2.818 0l-7.498-3.04A1.75 1.75 0 0 1 2 16.827V7.176a1.75 1.75 0 0 1 1.093-1.622zm2.254 1.39a2.25 2.25 0 0 0-1.69 0L9.24 4.68l7.527 2.927l2.669-1.03zm1.846 4.505L7.215 5.5L4.59 6.564l7.411 2.882zM3.5 16.828a.25.25 0 0 0 .156.231l7.499 3.04q.047.02.095.036v-9.371L3.5 7.75zm9.345 3.271l7.499-3.04a.25.25 0 0 0 .156-.232V7.774l-7.75 2.992v9.37z"/></svg></span><span class="k">The Package</span><span class="v">MSI installer, 3238&nbsp;KB</span></li>
+        <li><span class="i"><svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M15.25 2a.75.75 0 0 1 .743.648L16 2.75v2.325A3.75 3.75 0 0 1 18.926 8h2.325a.75.75 0 0 1 .102 1.493l-.102.007H19v1.75h2.25a.75.75 0 0 1 .743.648L22 12a.75.75 0 0 1-.648.743l-.102.007H19v1.75h2.25a.75.75 0 0 1 .743.648l.007.102a.75.75 0 0 1-.648.743L21.25 16h-2.325A3.75 3.75 0 0 1 16 18.926v2.325a.75.75 0 0 1-1.493.102l-.007-.102V19h-1.751l.001 2.251a.75.75 0 0 1-.648.743L12 22a.75.75 0 0 1-.743-.648l-.007-.102l-.001-2.251H9.5v2.251a.75.75 0 0 1-.648.743L8.75 22a.75.75 0 0 1-.743-.648L8 21.25v-2.325A3.75 3.75 0 0 1 5.075 16H2.75a.75.75 0 0 1-.102-1.493l.102-.007L5 14.499v-1.75l-2.25.001a.75.75 0 0 1-.743-.648L2 12a.75.75 0 0 1 .648-.743l.102-.007L5 11.249v-1.75L2.75 9.5a.75.75 0 0 1-.743-.648L2 8.75a.75.75 0 0 1 .648-.743L2.75 8l2.325-.001A3.75 3.75 0 0 1 8 5.075V2.75a.75.75 0 0 1 1.493-.102l.007.102v2.249h1.749l.001-2.249a.75.75 0 0 1 .648-.743L12 2a.75.75 0 0 1 .743.648l.007.102l-.001 2.249H14.5V2.75a.75.75 0 0 1 .55-.723l.098-.02zm0 4.5h-6.5A2.25 2.25 0 0 0 6.5 8.75v6.5a2.25 2.25 0 0 0 2.25 2.25h6.5a2.25 2.25 0 0 0 2.25-2.25v-6.5a2.25 2.25 0 0 0-2.25-2.25m-3.245 2.505a3 3 0 1 1 0 6a3 3 0 0 1 0-6m0 1.5a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3"/></svg></span><span class="k">Runtime</span><span class="v">.NET. The installer tells you if it is missing.</span></li>
+        <li><span class="i"><svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M3.28 2.22a.75.75 0 1 0-1.06 1.06l3.364 3.365a12 12 0 0 0-2.033 1.634c-.49.489-.964 1.069-1.394 1.69a.75.75 0 1 0 1.233.854c.381-.55.8-1.062 1.222-1.484a10.5 10.5 0 0 1 2.062-1.604l1.592 1.592a8 8 0 0 0-1.923 1.424c-.61.61-1.109 1.3-1.492 2.056a.75.75 0 0 0 1.339.677a6.5 6.5 0 0 1 1.214-1.673a6.6 6.6 0 0 1 1.984-1.362l1.93 1.93a5.07 5.07 0 0 0-2.876 1.44a5.1 5.1 0 0 0-1.061 1.57a.75.75 0 0 0 1.374.602c.185-.422.437-.8.747-1.11a3.59 3.59 0 0 1 3.36-.959l7.857 7.858a.75.75 0 0 0 1.061-1.06zm8.304 6.182l1.584 1.584a6.53 6.53 0 0 1 3.516 1.825a6.8 6.8 0 0 1 1.217 1.692a.75.75 0 0 0 1.335-.683a8.3 8.3 0 0 0-1.492-2.07a8.04 8.04 0 0 0-6.16-2.348M8.487 5.305L9.713 6.53a10.44 10.44 0 0 1 10.908 4.297a.75.75 0 0 0 1.235-.852a11.95 11.95 0 0 0-13.369-4.67m4.573 11.134a1.5 1.5 0 1 1-2.121 2.122a1.5 1.5 0 0 1 2.121-2.122"/></svg></span><span class="k">Internet</span><span class="v">Only needed to download the installer</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="faq">
+    <div class="wrap">
+      <h2>Questions, answered.</h2>
+      <div class="faq">
+        <details>
+          <summary>Windows says “Windows protected your PC”. Is that normal? <svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M4.22 8.47a.75.75 0 0 1 1.06 0L12 15.19l6.72-6.72a.75.75 0 1 1 1.06 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L4.22 9.53a.75.75 0 0 1 0-1.06"/></svg></summary>
+          <p>Windows shows this for installers it does not recognise yet. If you downloaded ProjectOLDR from this page, click <b>More info</b>, then <b>Run anyway</b>.</p>
+        </details>
+        <details>
+          <summary>The installer asks for .NET. What do I do? <svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M4.22 8.47a.75.75 0 0 1 1.06 0L12 15.19l6.72-6.72a.75.75 0 1 1 1.06 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L4.22 9.53a.75.75 0 0 1 0-1.06"/></svg></summary>
+          <p>Install the .NET runtime the message points you to, then run the installer again.</p>
+        </details>
+        <details>
+          <summary>How do I uninstall ProjectOLDR? <svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M4.22 8.47a.75.75 0 0 1 1.06 0L12 15.19l6.72-6.72a.75.75 0 1 1 1.06 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L4.22 9.53a.75.75 0 0 1 0-1.06"/></svg></summary>
+          <p>Open <b>Windows Settings</b>, go to <b>Apps</b>, find ProjectOLDR in the list and click <b>Uninstall</b>.</p>
+        </details>
+        <details>
+          <summary>Does it work on macOS or Linux? <svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M4.22 8.47a.75.75 0 0 1 1.06 0L12 15.19l6.72-6.72a.75.75 0 1 1 1.06 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L4.22 9.53a.75.75 0 0 1 0-1.06"/></svg></summary>
+          <p>No. ProjectOLDR is built for Windows only we will work for other version soon were sorry MacOS Users and Linux Users.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>Ready to launch your old Secret Neighbor?</h2>
+      <p>Download ProjectOLDR and be playing in a minute.</p>
+      <a class="dl dl-link" href="ProjectOLDR.msi" download>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 2h9.5v9.5H2zM12.5 2H22v9.5h-9.5zM2 12.5h9.5V22H2zM12.5 12.5H22V22h-9.5z"/></svg>
+        Download for Windows
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 ProjectOLDR. All rights reserved.</span>
+    <div class="social">
+      <a href="https://discord.gg/JcZA4p2BHk" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord"><i class="fa-brands fa-discord"></i></a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <svg class="fl" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="currentColor" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m0 1.5a8.5 8.5 0 1 0 0 17a8.5 8.5 0 0 0 0-17m-1.25 9.94l4.47-4.47a.75.75 0 0 1 1.133.976l-.073.084l-5 5a.75.75 0 0 1-.976.073l-.084-.073l-2.5-2.5a.75.75 0 0 1 .976-1.133l.084.073zl4.47-4.47z"/></svg>
+  <div><b>Your download is starting.</b><br>If Windows shows a SmartScreen warning, click <b>More info</b>, then <b>Run anyway</b>.</div>
+</div>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    if (window.lucide) lucide.createIcons();
+
+    var toast = document.getElementById('toast');
+    var timer;
+    document.querySelectorAll('.dl-link, .dl').forEach(function (el) {
+      el.addEventListener('click', function () {
+        toast.classList.add('show');
+        clearTimeout(timer);
+        timer = setTimeout(function () { toast.classList.remove('show'); }, 9000);
+      });
+    });
+  });
+</script>
+</body>
+</html>
